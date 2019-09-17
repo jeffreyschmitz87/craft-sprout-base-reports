@@ -415,7 +415,7 @@ class ReportsController extends Controller
      */
     public function actionExportReport()
     {
-        $this->requirePermission($this->permissions['sproutReports-viewReports']);
+        //$this->requirePermission($this->permissions['sproutReports-viewReports']);
 
         $reportId = Craft::$app->getRequest()->getParam('reportId');
 
