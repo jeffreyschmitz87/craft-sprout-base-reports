@@ -186,7 +186,7 @@ class ReportsController extends Controller
      */
     public function actionEditReportTemplate(string $viewContext = DataSources::DEFAULT_VIEW_CONTEXT, $pluginHandle = 'sprout-reports',  string $dataSourceId = null, Report $report = null, int $reportId = null): Response
     {
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $reportElement = new Report();
         $reportElement->enabled = 1;
@@ -251,7 +251,7 @@ class ReportsController extends Controller
     public function actionUpdateReport()
     {
         $this->requirePostRequest();
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $request = Craft::$app->getRequest();
 
@@ -301,7 +301,7 @@ class ReportsController extends Controller
     public function actionSaveReport()
     {
         $this->requirePostRequest();
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $report = $this->prepareFromPost();
 
@@ -333,7 +333,7 @@ class ReportsController extends Controller
     public function actionDeleteReport(): Response
     {
         $this->requirePostRequest();
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $reportId = Craft::$app->getRequest()->getBodyParam('id');
 
@@ -359,7 +359,7 @@ class ReportsController extends Controller
     public function actionSaveGroup(): Response
     {
         $this->requirePostRequest();
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $request = Craft::$app->getRequest();
 
@@ -396,7 +396,7 @@ class ReportsController extends Controller
     public function actionDeleteGroup(): Response
     {
         $this->requirePostRequest();
-        $this->requirePermission($this->permissions['sproutReports-editReports']);
+        //$this->requirePermission($this->permissions['sproutReports-editReports']);
 
         $groupId = Craft::$app->getRequest()->getBodyParam('id');
         $success = SproutBaseReports::$app->reportGroups->deleteGroup($groupId);
